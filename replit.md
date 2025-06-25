@@ -8,12 +8,13 @@ Complete e-commerce platform for selling artisanal cakes with WhatsApp integrati
 - 2024-12-23: Fixed Windows compatibility issues with NODE_ENV
 - 2024-12-23: Added WhatsApp checkout integration
 - 2024-12-23: Implemented shopping cart functionality
+- 2025-01-02: Successfully migrated from Express + React to Next.js framework
 
 ## Project Architecture
-- **Frontend**: React + TypeScript + Tailwind CSS + shadcn/ui
-- **Backend**: Express.js + TypeScript
-- **Storage**: In-memory storage (MemStorage class)
-- **Routing**: Wouter for client-side routing
+- **Frontend**: Next.js + React + TypeScript + Tailwind CSS + shadcn/ui
+- **Backend**: Next.js API Routes
+- **Storage**: In-memory storage (API routes)
+- **Routing**: Next.js App Router
 - **State Management**: React Context for cart
 - **Integration**: WhatsApp Web API for order processing
 
