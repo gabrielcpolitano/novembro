@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Politano</title>
+    <meta name="description" content="Desenvolvedor Front-End com mais de 300 exercícios de JavaScript. Disponível para projetos full-time. React, JavaScript, HTML5, CSS3, Tailwind CSS.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-gradient">
+                    GabrielPolitano
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition-colors">Início</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-blue-600 transition-colors">Serviços</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition-colors">Portfolio</a>
+                    <a href="#preco" class="text-gray-700 hover:text-blue-600 transition-colors">Preços</a>
+                    <a href="#contato" class="text-gray-700 hover:text-blue-600 transition-colors">Contato</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition-colors py-2">Início</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-blue-600 transition-colors py-2">Serviços</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition-colors py-2">Portfolio</a>
+                    <a href="#preco" class="text-gray-700 hover:text-blue-600 transition-colors py-2">Preços</a>
+                    <a href="#contato" class="text-gray-700 hover:text-blue-600 transition-colors py-2">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="gradient-bg text-white min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    🚀 Desenvolvedor<br>
+                    <span class="text-yellow-300">Front-End</span><br>
+                    com Foco em<br>
+                    <span class="text-yellow-300">Resultado</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                    Disponível para Projetos!
+                </p>
+                <p class="text-lg mb-8 text-gray-300 leading-relaxed">
+                    Desenvolvedor front-end com sólida experiência prática: mais de <strong class="text-yellow-300">300 exercícios de JavaScript</strong> completados, todos documentados e disponíveis no meu canal do YouTube.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contato" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-colors text-center mb-10">
+                        Vamos Conversar!
+                    </a>
+                    <a href="#portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors text-center mb-10">
+                        Ver Portfolio
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center animate-float">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl">
+                    <i class="fas fa-code text-6xl text-yellow-300 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Base Técnica Forte</h3>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <i class="fab fa-js-square text-yellow-400 text-2xl mb-2"></i>
+                            <p>JavaScript Moderno</p>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <i class="fab fa-react text-blue-400 text-2xl mb-2"></i>
+                            <p>React</p>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <i class="fab fa-html5 text-orange-400 text-2xl mb-2"></i>
+                            <p>HTML5</p>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <i class="fab fa-css3-alt text-blue-400 text-2xl mb-2"></i>
+                            <p>CSS3 & Tailwind</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Minhas <span class="text-gradient">Especialidades</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Tecnologias atualizadas e uma base técnica sólida para criar interfaces rápidas, responsivas e otimizadas
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card-hover bg-gradient-to-br from-yellow-50 to-yellow-100 p-8 rounded-2xl text-center">
+                    <div class="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-js-square text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">JavaScript Moderno</h3>
+                    <p class="text-gray-600">ES6+, Async/Await, Promises, DOM Manipulation, APIs RESTful</p>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl text-center">
+                    <div class="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-react text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">React Avançado</h3>
+                    <p class="text-gray-600">SPAs, Hooks, Componentização, Context API, Estado Global</p>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl text-center">
+                    <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Design Responsivo</h3>
+                    <p class="text-gray-600">HTML5, CSS3, Tailwind CSS, Mobile-First, Cross-Browser</p>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl text-center">
+                    <div class="bg-purple-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Performance</h3>
+                    <p class="text-gray-600">Otimização, Code Splitting, SEO, Acessibilidade, UX/UI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Meu <span class="text-gradient">Portfolio</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experiência prática comprovada com mais de 300 exercícios de JavaScript documentados
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-red-500 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-youtube text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Canal no YouTube</h3>
+                                <p class="text-gray-600">Conteúdo educativo e projetos práticos</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Mais de <strong class="text-red-500">300 exercícios de JavaScript</strong> completados e documentados. 
+                            Cada exercício representa horas de prática e aprendizado contínuo, demonstrando minha 
+                            dedicação e expertise na linguagem.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Algoritmos</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Estruturas de Dados</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">DOM</span>
+                        </div>
+                        <a href="#contato" class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition-colors inline-block">
+                            Ver Canal <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                            <h4 class="text-lg font-semibold text-gray-900">Projetos Práticos</h4>
+                        </div>
+                        <p class="text-gray-600">SPAs com React, integração de APIs, interfaces responsivas</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                            <h4 class="text-lg font-semibold text-gray-900">Código Limpo</h4>
+                        </div>
+                        <p class="text-gray-600">Estrutura profissional, boas práticas, manutenibilidade</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                            <h4 class="text-lg font-semibold text-gray-900">Experiência Comprovada</h4>
+                        </div>
+                        <p class="text-gray-600">300+ exercícios documentados, aprendizado contínuo</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                            <h4 class="text-lg font-semibold text-gray-900">Resultados Reais</h4>
+                        </div>
+                        <p class="text-gray-600">Interfaces otimizadas, performance superior, UX excepcional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="preco" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Plano <span class="text-gradient">Exclusivo</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Uma proposta única para acelerar seu projeto com qualidade profissional
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                    <!-- Background decoration -->
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-10 transform translate-x-16 -translate-y-16"></div>
+                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-10 transform -translate-x-12 translate-y-12"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="text-center mb-8">
+                            <div class="inline-flex items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
+                                <i class="fas fa-fire mr-2"></i>
+                                OFERTA ESPECIAL
+                            </div>
+                            <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                                Trabalho Full-Time
+                            </h3>
+                            <p class="text-lg text-gray-600 mb-6">
+                                Seu braço direito no front-end por 15 dias no mês
+                            </p>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div class="text-center md:text-left">
+                                <div class="text-6xl md:text-7xl font-bold text-gradient mb-4">
+                                    R$800
+                                </div>
+                                <p class="text-xl text-gray-600 mb-6">por mês</p>
+                                
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-green-500 mr-3"></i>
+                                        <span class="text-gray-700">15 dias de trabalho full-time</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-green-500 mr-3"></i>
+                                        <span class="text-gray-700">Front-end completo do zero</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-green-500 mr-3"></i>
+                                        <span class="text-gray-700">Código limpo e estrutura profissional</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-green-500 mr-3"></i>
+                                        <span class="text-gray-700">Suporte completo durante o projeto</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-4">Ideal para:</h4>
+                                    <div class="space-y-3 text-left">
+                                        <p class="text-gray-700">📈 Acelerar seu projeto</p>
+                                        <p class="text-gray-700">💡 Colocar uma ideia no ar</p>
+                                        <p class="text-gray-700">✨ Profissionalizar sua interface</p>
+                                        <p class="text-gray-700">🚀 Obter resultados reais</p>
+                                    </div>
+                                </div>
+                                
+                                <a href="#contato" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105 inline-block shadow-lg">
+                                    Quero Contratar Agora!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="section-padding bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Vamos <span class="text-yellow-400">Conversar!</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Pronto para mostrar resultados reais. Entre em contato e vamos discutir seu projeto!
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Por que escolher meus serviços?</h3>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-star text-gray-900 text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Experiência Comprovada</h4>
+                                <p class="text-gray-300">Mais de 300 exercícios de JavaScript completados e documentados no YouTube</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-rocket text-gray-900 text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Tecnologias Atualizadas</h4>
+                                <p class="text-gray-300">React, JavaScript moderno, HTML5, CSS3, Tailwind CSS - sempre atualizado</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-code text-gray-900 text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Código Limpo</h4>
+                                <p class="text-gray-300">Estrutura profissional, boas práticas e manutenibilidade garantida</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-clock text-gray-900 text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Dedicação Total</h4>
+                                <p class="text-gray-300">15 dias full-time por mês focado 100% no seu projeto</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-400 text-gray-900 p-6 rounded-2xl">
+                        <h4 class="text-xl font-bold mb-2">💼 Proposta Especial</h4>
+                        <p class="font-semibold">R$800/mês por 15 dias de trabalho full-time</p>
+                        <p class="text-sm mt-2">Seu front-end completo, profissional e otimizado!</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                            Solicite um Orçamento
+                        </h3>
+                        
+                        <form id="contactForm" action="https://formspree.io/f/mldljzwp" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Nome Completo *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                                    placeholder="Seu nome completo"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                    E-mail *
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                                    placeholder="seu@email.com"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                                    WhatsApp
+                                </label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                                    placeholder="(11) 99999-9999"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="project" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Tipo de Projeto
+                                </label>
+                                <select 
+                                    id="project" 
+                                    name="project" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                                >
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="website">Website Institucional</option>
+                                    <option value="ecommerce">E-commerce</option>
+                                    <option value="webapp">Aplicação Web</option>
+                                    <option value="landing">Landing Page</option>
+                                    <option value="react">Projeto React</option>
+                                    <option value="other">Outro</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Descreva seu Projeto *
+                                </label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    required 
+                                    rows="4" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                                    placeholder="Conte-me sobre seu projeto, objetivos, prazo e qualquer detalhe importante..."
+                                ></textarea>
+                            </div>
+                            
+                            <div>
+                                <label class="flex items-center">
+                                    <input 
+                                        type="checkbox" 
+                                        name="interested_package" 
+                                        class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                    >
+                                    <span class="ml-2 text-sm text-gray-700">
+                                        Tenho interesse no pacote de R$800/mês (15 dias full-time)
+                                    </span>
+                                </label>
+                            </div>
+                            
+                            <button 
+                                type="submit" 
+                                class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg"
+                            >
+                                Enviar Mensagem
+                                <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                        
+                        <div class="text-center mt-6">
+                            <p class="text-gray-600 text-sm">
+                                Respondo em até 24h • Orçamento gratuito
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-gradient mb-4">
+                    DevFrontEnd
+                </div>
+                <p class="text-gray-400 mb-6">
+                    Desenvolvedor Front-End • JavaScript • React • HTML5 • CSS3
+                </p>
+                <p class="text-gray-400 mb-6">
+                    🚀 Disponível para projetos • 300+ exercícios de JavaScript documentados
+                </p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#contato" class="text-gray-400 hover:text-yellow-400 transition-colors">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                    <a href="#contato" class="text-gray-400 hover:text-yellow-400 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="#contato" class="text-gray-400 hover:text-yellow-400 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#contato" class="text-gray-400 hover:text-yellow-400 transition-colors">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-500 text-sm">
+                        © 2025 DevFrontEnd. Desenvolvedor Front-End Profissional.
+                    </p>
+                    <p class="text-gray-500 text-sm mt-2">
+                        Estou pronto para mostrar resultados reais no seu projeto!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white w-12 h-12 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-110 hidden z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom Success Popup -->
+    <div id="successPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 transform scale-95 transition-all duration-300" id="popupContent">
+            <div class="text-center">
+                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-green-500 text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Mensagem Enviada!</h3>
+                <p class="text-gray-600 mb-6">
+                    Obrigado pelo seu interesse! Recebi sua mensagem e vou responder em até 24 horas com uma proposta personalizada para seu projeto.
+                </p>
+                <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                    <p class="text-blue-800 font-semibold text-sm">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Próximo passo: Vou analisar seu projeto e preparar um orçamento detalhado!
+                    </p>
+                </div>
+                <button onclick="closeSuccessPopup()" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all">
+                    Perfeito!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars text-xl';
+            } else {
+                icon.className = 'fas fa-times text-xl';
+            }
+        });
+
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.querySelector('i').className = 'fas fa-bars text-xl';
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Clear form fields
+                    contactForm.reset();
+                    
+                    // Show custom success popup
+                    showSuccessPopup();
+                } else {
+                    throw new Error('Erro no envio');
+                }
+            } catch (error) {
+                // Fallback: submit form normally if fetch fails
+                contactForm.submit();
+            }
+        });
+
+        // Success popup functions
+        function showSuccessPopup() {
+            const popup = document.getElementById('successPopup');
+            const popupContent = document.getElementById('popupContent');
+            
+            popup.classList.remove('hidden');
+            
+            // Animate popup entrance
+            setTimeout(() => {
+                popupContent.classList.remove('scale-95');
+                popupContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeSuccessPopup() {
+            const popup = document.getElementById('successPopup');
+            const popupContent = document.getElementById('popupContent');
+            
+            // Animate popup exit
+            popupContent.classList.remove('scale-100');
+            popupContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                popup.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('successPopup').addEventListener('click', (e) => {
+            if (e.target.id === 'successPopup') {
+                closeSuccessPopup();
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
